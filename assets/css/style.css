@@ -14,11 +14,15 @@
 html{
     font-size: 62.5%;
     font-size: 1.6rem;
+    scroll-behavior: smooth; /*rolagem suave*/
 }
 body{
     font-family: "Open Sans", sans-serif;
     color: var(--primary-color);
     line-height: 1.5;
+}
+p{
+    margin-bottom: 2rem;
 }
 h1, h2, h3, h4 h5, h6{
     font-family: "Montserrat", sans-serif;
@@ -28,7 +32,9 @@ h1{
     text-transform: uppercase;
 }
 h2{
-    font-size: 5rem;
+    font-size: 4rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
 }
 h3{
     font-size: 4rem;
@@ -49,15 +55,16 @@ a{
     background-image: url('../img/main.svg');
     background-size: cover;
     background-position: center center;
-    color: var(--white)
+    color: var(--white);
 }
 .white-bg{
     background-color: var(--white);
+    color:#000
 }
 .main-content{
     max-width: 120rem;
     margin: 0 auto;
-    padding: var(--gap);
+    padding: 5rem var(--gap);
 }
 .section{
     min-height: 100vh;
@@ -110,19 +117,17 @@ a{
 .menu-spacing{
     height: 2rem;
 }
-
 .intro-content{
 display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--gap);
-    height: 100vh;
+    min-height: 100vh;
 }
 .intro-text-content, .intro-img{
     display: flex;
     flex-flow: column wrap;
     justify-content: center;   
 }
-
 .intro-text-content h2{
     font-size: 4rem;
     margin-bottom: 2rem;
@@ -131,4 +136,85 @@ display: grid;
 .intro-img img{
     max-width: 100%;
     height: auto;
+}
+.top3-content{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    max-width: 64rem;
+    text-align: center;
+}
+.grid-one-content{
+    display: flex;
+    flex-flow:column wrap;
+    justify-content: center;
+    max-width: 64rem;
+    min-height: 100vh;
+}
+.grid-main-heading{
+    margin-bottom: 0.1rem;
+}
+.grid-description{
+    padding-bottom: 4rem;
+}
+.grid{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap:var(--gap);
+    counter-reset: grid-counter;
+}
+.grid h3{
+    font-size: 2rem;
+    position: relative;
+    padding-left: 5rem;
+    padding-bottom: 3rem;
+}
+.grid h3::before{
+    counter-increment: grid-counter;
+    content: counter(grid-counter);
+    font-size: 2rem;
+    position: absolute;
+    font-style: italic;
+    top: -1rem;
+    left: 0.5rem;
+    font-size: 3rem;
+    transform: rotate(5deg);
+}
+.gallery-img{
+    width: 100%;
+    max-width: 36rem;
+    max-height: 36rem;
+    overflow: hidden;
+}
+.gallery-img img{
+    transform: all 300ms ease-in-out;
+}
+.gallery-img img:hover{
+    transform: translate(-3%, 3%) scale(1.2) rotate(5deg);
+}
+.responsive-table{
+    overflow: hidden;
+    overflow-y: auto;
+}
+.table{
+    min-width: 360px;
+    width: 100%;
+    border-collapse: collapse;
+}
+table caption{
+    font-style: italic;
+    font-size: 1rem;
+    text-align: left;
+    margin-bottom: 1rem;
+}
+table td, table th{
+    white-space: nowrap; /*nao quebra texto dentro da tabela*/
+    padding: 0.3rem;
+    text-align: left;
+    border: 0.1rem solid var(--light-gray-color);
+}
+tfoot td, table th {
+    background: var(--light-gray-color);
 }

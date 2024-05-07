@@ -22,6 +22,9 @@ body{
     color: var(--primary-color);
     line-height: 1.5;
 }
+.close-menu{
+display: none;
+}
 p{
     margin-bottom: 2rem;
 }
@@ -276,6 +279,21 @@ body .full-width{
 .footer a{
     color: #444;
 }
+.back-to-top{
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    background-color: var(--white);
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: var(--primary-color);
+    border: 0.1rem solid var(--primary-color);
+}
+
 
 @media (max-width:800px){
     .intro-content, .grid{
@@ -293,18 +311,47 @@ body .full-width{
     .grid-one-content{
         display: block ;
     }
-    /*
+    
     .menu{
         bottom: 0;
         text-align: center;
+        display: none;
     }
     .menu-content{
         height: 100vh;
     }
     .menu-content, .menu-content ul{
+        font-size: 2rem;
         flex-direction: column;
         justify-content: center;
+
+    }
+
+    .close-menu-label::after{
+        content: '☰';
+        position: fixed;
+        z-index: 2;
+        top: 2rem;
+        right: 2rem;
+        background: var(--primary-color);
+        color: var(--white);
+        width: 1rem;
+        height: 1rem;
+        font-size: 1rem;
+        line-height: 1rem;
+        text-align: center;
+        padding: 0.5rem;
+        cursor: pointer;
+    }
+    .close-menu:checked~.menu{
+        display: block;
+    }
+    .close-menu:checked~.close-menu-label::after{
+        content: '×';
+    }
+    .menu-spacing{
+       display: none;
     }
     
-    */
+   
 }

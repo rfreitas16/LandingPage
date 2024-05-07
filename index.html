@@ -14,13 +14,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 </head>
 <body>
+    <input type="checkbox" id="close-menu" class="close-menu" role="button" aria-label="Closemenu">
+    <label for="close-menu" class="close-menu-label" title="close menu"></label>
+
     <aside class="menu white-bg">
         <div class="main-content menu-content">
     <h1>
         <a href="#home">logo</a>
     </h1>
         <nav>
-            <ul>
+            <ul onclick="getElementById('close-menu').checked = false;">
                 <li>
                     <a href="#intro">Intro</a>
                     <a href="#grid-one">Mygrid</a>
@@ -190,6 +193,10 @@
 <footer id="footer" class=" footer white-bg">
     <p><a href="">Feito com ♥ por Rafael</a></p>
 </footer>
+
+<!-- botao para subir a pagina -->
+
+<a class="back-to-top" href="#">TOP</a>
 
 </body>
 </html>
